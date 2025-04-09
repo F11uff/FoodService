@@ -4,10 +4,10 @@ import (
 	"errors"
 	"gopkg.in/yaml.v2"
 	"os"
-	"pet/pkg/logger"
+	"pet/backend/internal/service"
 )
 
-func NewConfig(path string, logService logger.LoggerService) (*Config, error) {
+func NewConfig(path string, logService service.LoggerService) (*Config, error) {
 	file, err := os.Open(path)
 	defer file.Close()
 

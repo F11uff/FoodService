@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXA — доставка</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+
+<!--    <style id="force-white">-->
+<!--        body {-->
+<!--            background: blanchedalmond !important;-->
+<!--            border: 5px solid green !important;-->
+<!--        }-->
+<!--    </style>-->
+    <div class="container">
+        <a href="#" class="logo">
+                <span class="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="var(--primary)"/>
+                        <path d="M22.4 9.6H9.6V22.4H22.4V9.6Z" fill="white"/>
+                        <path d="M16 12.8L19.2 16L16 19.2L12.8 16L16 12.8Z" fill="var(--primary)"/>
+                    </svg>
+                </span>
+            <span class="logo-text">EXA</span>
+        </a>
+
+        <div class="search">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 21L16.65 16.65" stroke="#777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input type="text" placeholder="Искать в EXA..." class="search-input">
+        </div>
+
+        <button class="login-button">
+            <span>Войти</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<div class="categories-container">
+    <div class="categories-scroll">
+        <div class="category active">От Самоката</div>
+        <div class="category">Готовая еда</div>
+        <div class="category">Овощи и фрукты</div>
+        <div class="category">Молоко, яйца и сыр</div>
+        <div class="category">Хлеб и выпечка</div>
+        <div class="category">Мясо и рыба</div>
+        <div class="category">Морозилка</div>
+        <div class="category">Вода и напитки</div>
+        <div class="category">Сладкое</div>
+        <div class="category">Снеки</div>
+        <div class="category">Бакалея</div>
+        <div class="category">ЗОЖ и веганство</div>
+        <div class="category">Для веганов</div>
+        <div class="category">Здоровый перекус</div>
+        <div class="category">Здоровый перекус</div>
+        <div class="category">Здоровый перекус</div>
+        <div class="category">Здоровый перекус</div>
+        <div class="category">Здоровый перекус</div>
+        <div class="category">Здоровый перекус</div>
+        <div class="category">Здоровый перекус</div>
+        <div class="category">Здоровый перекус</div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.category').forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('.category').forEach(el => {
+                el.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+    //
+    // // Обработка поиска
+    const searchInput = document.querySelector('.search-input');
+    const categories = document.querySelectorAll('.category');
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        categories.forEach(category => {
+            if (category.textContent.toLowerCase().includes(query)) {
+                category.style.display = 'block';
+            } else {
+                category.style.display = 'none';
+            }
+        });
+    });
+    //
+    // // Прокрутка только скроллбара
+    // const scrollbar = document.getElementById('scrollbar');
+    //
+    // scrollbar.addEventListener('wheel', function(e) {
+    //     e.preventDefault(); // Предотвращаем прокрутку страницы
+    //     scrollbar.scrollTop += e.deltaY; // Прокручиваем только скроллбар
+    // });
+    //
+    // // Прокрутка только основного содержимого
+    // const mainContent = document.querySelector('main');
+    //
+    // mainContent.addEventListener('wheel', function(e) {
+    //     e.preventDefault(); // Предотвращаем прокрутку скроллбара
+    //     mainContent.scrollTop += e.deltaY; // Прокручиваем только основное содержимое
+    // });
+</script>
+</body>
+</html>

@@ -1,9 +1,9 @@
-package logger
+package service
 
 import (
 	"github.com/sirupsen/logrus"
 	"os"
-	_const "pet/config/const"
+	_const "pet/backend/config/const"
 )
 
 const (
